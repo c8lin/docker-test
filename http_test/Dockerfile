@@ -1,2 +1,9 @@
-FROM httpd:2.4
-COPY ./public-html/ /usr/local/apache2/htdocs/
+#base image
+FROM centos:centos7
+
+RUN yum install -y httpd 
+
+EXPOSE 1024
+
+ENTRYPOINT ["/usr/sbin/httpd"]
+# CMD ["/usr/bin/echo 'hello_world'"]
